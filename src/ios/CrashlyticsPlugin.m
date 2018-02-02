@@ -34,7 +34,7 @@
     NSString *identifier = [options objectForKey:@"value"];
     if(identifier)
     {
-        [[Crashlytics sharedInstance] setUserIdentifier:identifier];
+        [CrashlyticsKit setUserIdentifier:identifier];
     }
 }
 
@@ -44,7 +44,7 @@
     NSString *username = [options objectForKey:@"value"];
     if(username)
     {
-        [[Crashlytics sharedInstance] setUserName:username];
+        [CrashlyticsKit setUserName:username];
     }
 }
 
@@ -54,14 +54,14 @@
     NSString *email = [options objectForKey:@"value"];
     if(email)
     {
-        [[Crashlytics sharedInstance] setUserEmail:email];
+        [CrashlyticsKit setUserEmail:email];
     }
 }
 
 #pragma mark ) Crash
 - (void)sendCrash:(CDVInvokedUrlCommand*)command
 {
-    [[Crashlytics sharedInstance] crash];
+    [CrashlyticsKit crash];
 }
 
 #pragma mark - Custom Keys
@@ -72,7 +72,7 @@
     NSString *key = [options objectForKey:@"key"];
     if(value && key)
     {
-        [[Crashlytics sharedInstance] setObjectValue:value forKey:key];
+        [CrashlyticsKit setObjectValue:value forKey:key];
     }
 }
 
@@ -83,7 +83,7 @@
     NSString *key = [options objectForKey:@"key"];
     if(key)
     {
-        [[Crashlytics sharedInstance] setIntValue:value forKey:key];
+        [CrashlyticsKit setIntValue:value forKey:key];
     }
 }
 
@@ -94,7 +94,7 @@
     NSString *key = [options objectForKey:@"key"];
     if(key)
     {
-        [[Crashlytics sharedInstance] setBoolValue:value forKey:key];
+        [CrashlyticsKit setBoolValue:value forKey:key];
     }
 }
 
@@ -105,7 +105,7 @@
     NSString *key = [options objectForKey:@"key"];
     if(key)
     {
-        [[Crashlytics sharedInstance] setFloatValue:value forKey:key];
+        [CrashlyticsKit setFloatValue:value forKey:key];
     }
 }
 
