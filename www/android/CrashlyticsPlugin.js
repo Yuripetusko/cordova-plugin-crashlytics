@@ -5,6 +5,10 @@ function CrashlyticsPlugin() {
   //this._callback;
 }
 
+CrashlyticsPlugin.prototype.init = function() {
+  cordova.exec(null, null, "CrashlyticsPlugin", "init");
+};
+
 CrashlyticsPlugin.prototype.addLog = function(message) {
   var defaults = {
     message: message,

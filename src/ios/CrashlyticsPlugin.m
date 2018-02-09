@@ -5,6 +5,7 @@
 //
 //
 
+@import Firebase;
 #import "CrashlyticsPlugin.h"
 #import <Crashlytics/Crashlytics.h>
 
@@ -13,6 +14,11 @@
     NSString *_description;
     NSString *_positiveButtonText;
     NSString *_negativeButtonText;
+}
+
+- (void)init:(CDVInvokedUrlCommand*)command
+{
+    [FIRApp configure];
 }
 
 #pragma mark - Logging
