@@ -18,7 +18,9 @@
 
 - (void)init:(CDVInvokedUrlCommand*)command
 {
-    [FIRApp configure];
+    if([FIRApp defaultApp] == nil) {
+       [FIRApp configure];
+    }
 }
 
 #pragma mark - Logging
